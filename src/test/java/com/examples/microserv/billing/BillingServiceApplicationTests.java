@@ -1,4 +1,4 @@
-package com.example.microservice.billing.billingservice;
+package com.examples.microserv.billing;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

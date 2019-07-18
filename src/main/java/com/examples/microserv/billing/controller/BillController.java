@@ -1,4 +1,4 @@
-package com.examples.microserv.controller;
+package com.examples.microserv.billing.controller;
 
 import com.examples.microserv.billing.config.GlobalMethod;
 import com.examples.microserv.billing.dto.MessageDto;
@@ -16,7 +16,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/bill")
+@RequestMapping("/bill")
 public class BillController {
     @Autowired
     private BillService billService;
@@ -31,10 +31,12 @@ public class BillController {
             if (bill1 != null){
                 URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
                         "/{id}").buildAndExpand(bill1.getBillId()).toUri();
-                messageResponse=ResponseEntity.created(location).body(globalMethod.getResponse(Integer.valueOf(bill1.getBillId()), "Bill Created Sucessfully"));
+                messageResponse=ResponseEntity.created(location).body(globalMethod.getResponse(bill1.getBillId(), "Bill Created Sucessfully"));
             }
 
         }catch (Exception e){
+//            LoggerFactory.
+            e.printStackTrace();
             messageResponse=null;
 
         }
@@ -45,12 +47,17 @@ public class BillController {
     {
         FieldError error = ex.getBindingResult().getFieldError("name");
         System.out.println("Error Message: " + (error != null ? error.getCode() : null) + " - " + (error != null ? error.getDefaultMessage() : null));
-        return ResponseEntity.badRequest().body(globalMethod.getErrorResponse(-1, error != null ? error.getDefaultMessage() : null));
+        return ResponseEntity.badRequest().body(globalMethod.getErrorResponse("", error != null ? error.getDefaultMessage() : null));
 
     }
     @GetMapping
     public List<Bill> getAll()
     {
         return billService.getBills();
+    }
+
+    @GetMapping("/test ")
+    public String testUrl(){
+        return  "Info";
     }
 }

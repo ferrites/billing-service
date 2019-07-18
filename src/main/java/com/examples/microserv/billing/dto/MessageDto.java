@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MessageDto {
     private Integer statusCode;
     private String status;
-    private Integer id;
+    private String id;
     private String message;
 }
 

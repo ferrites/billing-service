@@ -1,4 +1,4 @@
-package com.examples.microserv.controller;
+package com.examples.microserv.billing.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

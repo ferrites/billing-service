@@ -3,9 +3,11 @@ package com.examples.microserv.billing.config;
 import com.examples.microserv.billing.dto.MessageDto;
 import com.examples.microserv.billing.model.Bill;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GlobalMethod {
-    public MessageDto getResponse(Integer id, String message) {
+    public MessageDto getResponse(String id, String message) {
         MessageDto response = new MessageDto();
         response.setId(id);
         response.setStatus(HttpStatus.OK.name());
@@ -14,7 +16,7 @@ public class GlobalMethod {
         return response;
     }
 
-    public MessageDto getErrorResponse(Integer id, String message) {
+    public MessageDto getErrorResponse(String id, String message) {
         MessageDto response = new MessageDto();
         response.setId(id);
         response.setStatus(HttpStatus.BAD_REQUEST.name());

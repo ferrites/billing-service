@@ -19,9 +19,10 @@ Billing-Services Design
 
 
 {
-	"statusCode":"200",
-	"status":"Ok",
-	"message":"Bill created Successfully"
+    "statusCode": 200,
+    "status": "OK",
+    "id": "5d3061456d3e2359860d9e3e",
+    "message": "Bill Created Sucessfully"
 }
 
 =====================Create Services Request====================

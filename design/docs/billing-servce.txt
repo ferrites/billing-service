@@ -2,6 +2,8 @@ Billing-Services Design
 
 
 =====================Create Bill Request====================
+URL -http://localhost:8081/bill
+POST
 
 {
 	"spId":"",
@@ -26,6 +28,8 @@ Billing-Services Design
 }
 
 =====================Create Services Request====================
+URL -http://localhost:8081/services
+POST
 
 
 {
@@ -44,6 +48,8 @@ Billing-Services Design
 }
 
 ===================== listSpServiceBySpCode Request====================
+URL -http://localhost:8081/sp/services
+POST
 {
  	"spCode":"SP108"
  }
@@ -68,6 +74,8 @@ Billing-Services Design
  }
 
  ==================checkBill Request===========================
+ URL -http://localhost:8081/bill/search
+ POST
  {
   	"spCode":"SP108",
   	"billControlNumber":"991080000001"
@@ -93,6 +101,8 @@ Billing-Services Design
  }
 
   ==================SettleBill Request============================
+   URL -http://localhost:8081/settled/bill
+   POST
 
    {
    	"spShortName":"TPF",

@@ -23,7 +23,7 @@ import java.util.Date;
 public class Bill {
     @Id
     @Column(name = "billId")
-   // @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String billId;
     @Column(name = "spId")
     private String spId;

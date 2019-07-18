@@ -17,12 +17,11 @@ import javax.persistence.GenerationType;
 @ToString
 @EqualsAndHashCode
 @Slf4j
-
-@Document
-public class Service {
+@Document(collection ="Service")
+public class Services {
     @Id
     @Column(name = "serviceId")
-   // @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String serviceId;
     @Column(name = "spCode")
     private String spCode;

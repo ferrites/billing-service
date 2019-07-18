@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.examples.microserv.billing</groupId>
-	<artifactId>billing-service</artifactId>
+	<artifactId>billing-services</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>billing-service</name>
+	<name>billing-services</name>
 	<description>Billing Services</description>
 
 	<properties>

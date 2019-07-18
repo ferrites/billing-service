@@ -35,7 +35,6 @@ public class BillController {
             }
 
         }catch (Exception e){
-//            LoggerFactory.
             e.printStackTrace();
             messageResponse=null;
 
@@ -51,13 +50,9 @@ public class BillController {
 
     }
     @GetMapping
-    public List<Bill> getAll()
+    public List<Bill> getAllBills()
     {
         return billService.getBills();
     }
 
-    @GetMapping("/test ")
-    public String testUrl(){
-        return  "Info";
-    }
 }

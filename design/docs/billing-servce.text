@@ -1,0 +1,135 @@
+Billing-Services Design
+
+
+=====================Create Bill Request====================
+
+{
+	"spId":"",
+	"billControlNumber":"991080000001",
+	"billAmount":3500,
+	"billedDate":"2019-07-18 08:43",
+	"serviceId":"17380",
+	"billCurrencyCode":"TZS",
+	"customerEmail":"chumasitta@gmail.com",
+	"isPaid":false,
+	"spCode":"SP108"
+}
+
+====================Create Bill Response===================
+
+
+{
+	"statusCode":"200",
+	"status":"Ok",
+	"message":"Bill created Successfully"
+}
+
+=====================Create Services Request====================
+
+
+{
+	"spCode":"SP108",
+	"serviceCode":"17380",
+	"serviceName":"Student Registration Fees"
+}
+
+====================Create Services Response===================
+
+
+{
+	"statusCode":"200",
+	"status":"Ok",
+	"message":"Services created Successfully"
+}
+
+===================== listSpServiceBySpCode Request====================
+{
+ 	"spCode":"SP108"
+ }
+
+ ===================== listSpServiceBySpCode Response====================
+
+ {
+   "spServices":[
+                  {
+                  "serviceId":"12282df235",
+                  	"spCode":"SP108",
+                  	"serviceCode":"17380",
+                  	"serviceName":"Student Registration Fees"
+                  },
+                  {
+                    "serviceId":"12282df233",
+                    "spCode":"SP108",
+                    "serviceCode":"17380",
+                    "serviceName":"Student Registration Fees"
+                   }
+              ]
+ }
+
+ ==================checkBill Request===========================
+ {
+  	"spCode":"SP108",
+  	"billControlNumber":"991080000001"
+
+  }
+
+ ==================checkBill Response===========================
+ [ billControlNumber,SpCode,SpShortName,PSPCode,PspShortName,PaidDate,PaymentReceipt,billCurrencyCode]
+
+ {
+ 	"spShortName":"TPF",
+ 	"billControlNumber":"991080000001",
+ 	"pSPCode":"PSP006",
+ 	"pspShortName":"NMB",
+ 	"billAmount":3500,
+ 	"billedDate":"2019-07-18 08:43",
+ 	"paidDate":"2019-07-18 08:43",
+ 	"serviceId":"17380",
+ 	"billCurrencyCode":"TZS",
+ 	"paymentReceipt":"ECBI03930303303",
+ 	"spCode":"SP108"
+
+ }
+
+  ==================SettleBill Request============================
+
+   {
+   	"spShortName":"TPF",
+   	"billControlNumber":"991080000001",
+   	"pSPCode":"PSP006",
+   	"pspShortName":"NMB",
+   	"billAmount":3500,
+   	"billedDate":"2019-07-18 08:43",
+   	"paidDate":"2019-07-18 08:43",
+   	"serviceId":"17380",
+   	"billCurrencyCode":"TZS",
+   	"paymentReceipt":"ECBI03930303303",
+   	"spCode":"SP108"
+
+   }
+
+
+   ==================SettleBill Response===========================
+     {
+      	"billId":"173274",
+      	"billControlNumber":"991080000001",
+      	"billAmount":3500.00,
+      	"paidAmt":3500.00,
+      	"pspShortName":"NMB",
+      	"paidDate":"2019-07-18 08:43",
+      	"billedDate":"2019-07-18 08:43",
+      	"billCurrencyCode":"TZS",
+      	"paymentReceipt":"ECBI03930303303",
+      	"spCode":"SP108"
+
+      }
+
+
+
+
+
+
+
+
+
+

@@ -35,4 +35,15 @@ public class ServiceServiceImpl implements ServiceService {
         }
         return servicesList;
     }
+
+//    @Override
+//    public List<Services> listSpServiceBySpCode(String SpCode) {
+//        List<Services> servicesList;
+//        try {
+//            servicesList = serviceRepository.findServicesBySpCode(SpCode);
+//        } catch (Exception e) {
+//            servicesList = null;
+//        }
+//        return servicesList;
+//    }
 }

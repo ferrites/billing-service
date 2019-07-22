@@ -2,6 +2,7 @@ package com.examples.microserv.billing.config;
 
 import com.examples.microserv.billing.dto.MessageDto;
 import com.examples.microserv.billing.model.Bill;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
@@ -38,7 +39,8 @@ public class GlobalMethod {
             bill.setCustomerEmail("chumasitta@gmail.com");
             bill.setPaid(false);
             bill.setSpCode("SP108");
-            json=bill.toString();
+            ObjectMapper Obj = new ObjectMapper();
+            json=Obj.writeValueAsString(bill);;
 
         }catch (Exception e){
             e.printStackTrace();

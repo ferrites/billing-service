@@ -2,6 +2,7 @@ package com.examples.microserv.billing.controller;
 
 import com.examples.microserv.billing.config.GlobalMethod;
 import com.examples.microserv.billing.dto.MessageDto;
+import com.examples.microserv.billing.dto.SpServiceDo;
 import com.examples.microserv.billing.model.Services;
 import com.examples.microserv.billing.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,4 +62,17 @@ public class ServiceController {
         }
         return servicesList;
     }
+
+//    @PostMapping
+//    public SpServiceDo getSpServicesBySpCode(){
+//        SpServiceDo spServiceDo;
+//        try {
+//            spServiceDo= new SpServiceDo();
+//            spServiceDo.setServicesList(serviceService.getServices());
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            spServiceDo=null;
+//        }
+//        return spServiceDo;
+//    }
 }

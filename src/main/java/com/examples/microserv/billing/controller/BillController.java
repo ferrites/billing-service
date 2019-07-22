@@ -5,6 +5,9 @@ import com.examples.microserv.billing.dto.MessageDto;
 import com.examples.microserv.billing.model.Bill;
 import com.examples.microserv.billing.service.BillService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -16,7 +19,11 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/bill")
+@RequestMapping("/bills")
+@EnableHystrix
+@EnableCircuitBreaker
+@EnableHystrixDashboard
+
 public class BillController {
     @Autowired
     private BillService billService;
